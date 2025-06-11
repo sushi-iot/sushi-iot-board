@@ -11,6 +11,12 @@
 * Sushi Board offers a modular system that can be shared across multiple projects, from simple setups to more complex, DIY electronics systems. 
 * It’s not just for desk experiments; you can build something practical and functional.
 
+## Resources
+* [Sushi-IoT-Board documentation](https://sushi-iot.github.io/sushi-iot-board/)
+* [Espressif ESP32-DevKitC V4 user guide](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html)
+* [Sushi board on Instagram](https://www.instagram.com/sushi_board_iot/)
+
+
 ## Advantages
 * Based on ESP32 SoC: a reliable choice in the IoT field. You have access to a powerful ecosystem with numerous resources available online.
 * 100% based on very common commercial modules widely available online for Arduino and DIY electronics projects. Sushi board just help you connect them all together.
@@ -43,12 +49,6 @@ All the ingredients that are needed for a myriad of applications:
 * Temperature sensor
 * Size: 90x110 mm (both carrier and TOP boards)
 
-
-## Resources
-* [Espressif ESP32-DevKitC V4 user guide](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html)
-* Espressif modules
-* Sushi board on Instagram
-* MicroPython project
 
 ## Why Sushi ?
 The name "Sushi board" comes from the idea that, like sushi—a traditional Japanese specialty—the Sushi board is composed of various ingredients (the modules) that can be added or customized based on your preferences.
