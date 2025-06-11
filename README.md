@@ -45,7 +45,7 @@ All the ingredients that are needed for a myriad of applications:
 
 
 ## Resources
-* Espressif ESP32-DevKitC V4 user guide
+* [Espressif ESP32-DevKitC V4 user guide](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html)
 * Espressif modules
 * Sushi board on Instagram
 * MicroPython project
