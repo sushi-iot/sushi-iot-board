@@ -3,6 +3,8 @@
 **Sushi Board is an ESP32-based programmable modular embedded system for general-purpose IoT, suitable for STEM education and DIY electronics projects.**
 100% based on widely available commercial modules, making it cost-effective and easy to source.
 
+[**Sushi-IoT-Board documentation**](https://sushi-iot.github.io/sushi-iot-board/)
+
 ## For MAKERs
 * A carrier board that connect all the essential components needed to create a complete IoT unit, suitable for various applications, minimizing the complexity of assembling different components and boards without requiring extensive soldering or wiring.
 * Only the CPU is mandatory; then you simply plug in the modules you need for your specific purposes.
