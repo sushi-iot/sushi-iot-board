@@ -566,8 +566,11 @@ In this picture, all add-on module headers and sockets are highlighted with diff
 <li>
 <p><strong>Solder all the components</strong><br />
 Be careful with resistor values: they must match the values printed on the PCB. This may not be obvious to everyone — resistor values can be read using a tester or based on the colored lines on the component.<br />
-<img alt="PCB-GP-ELEMENTS" src="../img/bot-pcb-components.png" /></p>
+⚠️ <u>Be careful when placing the IO-Expander resistor array</u> (blue color in the picture): the dot on the component must be on the same side as the dot on the PCB.</p>
 </li>
+</ol>
+<p><img alt="PCB-GP-ELEMENTS" src="../img/bot-pcb-components.png" /></p>
+<ul>
 <li>
 <p><strong>Solder the connectors on the main PCB</strong><br />
 All connectors are marked in the picture with "CN_...".<br />
@@ -588,7 +591,7 @@ Some modules, such as relays and IO expanders, are usually supplied without pre-
 If you plan to use them, you can solder the extra GP connectors. Otherwise, you can leave them unmounted for now.<br />
 <img alt="PCB-GP-ELEMENTS" src="../img/bot-pcb-gp.png" /></p>
 </li>
-</ol>
+</ul>
 <hr />
 <h3 id="plug-add-on-modules"><strong>Plug add-on modules</strong></h3>
 <p>Once soldering is complete, you can plug the add-on modules onto the board:</p>
@@ -620,13 +623,13 @@ All "fix kits" are listed in the <a href="../kit_content/#mounting-hardware">mou
 <p>There are different options to connect power to the board — see all available methods in the <a href="../hardware/#cn_batt">CN_BATT diagram</a>.</p>
 <hr />
 <h3 id="system-test"><strong>System test</strong></h3>
-<p>The Sushi Board comes with the Sushi Framework preloaded. This allows for a quick system test at first startup.<br />
-By browsing the user interface, you can perform a basic hardware check. For more details, see the Sushi Framework documentation.</p>
+<p>The Sushi Board comes with the <a href="https://github.com/sushi-iot/sushi-iot-framework">Sushi-IoT-Framework</a> preloaded. This allows for a quick system test at first startup.<br />
+By browsing the user interface, you can perform a basic hardware check. For more details, see the <a href="https://sushi-iot.github.io/sushi-iot-framework">Sushi-IoT-Framework DOC</a>.</p>
 <hr />
 <h3 id="setup-development"><strong>Setup &amp; development</strong></h3>
 <p>At this stage, the Sushi Board is ready to use. You have two main options:</p>
 <ul>
-<li>Start using the Sushi Framework, which gives you a ready-to-develop system using MicroPython. In this case, refer to the Sushi Framework documentation.</li>
+<li>Start using the <a href="https://github.com/sushi-iot/sushi-iot-framework">Sushi-IoT-Framework</a>, which gives you a ready-to-develop system using MicroPython. In this case, refer to the <a href="https://sushi-iot.github.io/sushi-iot-framework">Sushi-IoT-Framework DOC</a>.</li>
 <li>Develop and flash your own firmware using your preferred environment (Arduino, Espressif IDF, or others).</li>
 </ul>
 

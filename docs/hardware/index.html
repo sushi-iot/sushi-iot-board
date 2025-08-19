@@ -866,8 +866,9 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Schematic diagram</strong>  <br />
-<img alt="CN_BATT" src="../img/cn_batt.png" /></p>
+<p><strong>Schematic diagram</strong></p>
+<p><img alt="CN_BATT" src="../img/cn_batt.png" /></p>
+<p><strong>IMPORTANT</strong>: note that the SW_POW-SWITCH enable/disable any external power from <em>CN_BATT</em>.</p>
 <p><strong>Power modes</strong>  <br />
 There are different ways to power the Sushi board:</p>
 <ul>
@@ -885,7 +886,8 @@ In this configuration, both external power presence and battery level can be mon
 </li>
 <li>
 <p><strong>Powered via the USB connector of the ESP32 DevKitC board</strong>.<br />
-This is the typical setup during software development, where the firmware is uploaded directly to the ESP32 board. To avoid damage, <strong>disconnect any other power sources from CN_BATT when using this mode</strong>.  </p>
+This is the typical setup during software development, where the firmware is uploaded directly to the ESP32 board.<br />
+⚠️ <strong>TROUBLESHOOTING</strong>: In this mode, when a MODEM is connected to <em>CN_MODEM</em>, the PC USB port may not supply enough current. As a result, the microcontroller may reset when the MODEM powers up. A possible solution is to keep the UPS unit connected (with the power switch on). In this way, the UPS battery will provide the extra current required, especially during boot.</p>
 </li>
 <li>
 <p><strong>Powered by an external custom battery or circuit</strong>.<br />
@@ -921,8 +923,8 @@ In this case, the VIN and VB pins can still be used in a custom way to monitor e
 </tr>
 </tbody>
 </table>
-<p><strong>Schematic diagram</strong>  <br />
-<img alt="CN_EXT-TS1" src="../img/cn_ext-ts1.png" /></p>
+<p><strong>Schematic diagram</strong></p>
+<p><img alt="CN_EXT-TS1" src="../img/cn_ext-ts1.png" /></p>
 <hr />
 <h3 id="cn_gpio1-gpio"><strong>CN_GPIO1</strong> (GPIO)</h3>
 <p>General-purpose I/O directly connected to the ESP32 microcontroller on the ESP32-DevKitC board.</p>
@@ -1163,8 +1165,8 @@ If keyboard management is disabled, they can be used as general-purpose inputs.<
 </tr>
 </tbody>
 </table>
-<p><strong>Schematic diagram</strong>  <br />
-<img alt="CN_IOEX" src="../img/cn_ioex.png" /></p>
+<p><strong>Schematic diagram</strong></p>
+<p><img alt="CN_IOEX" src="../img/cn_ioex.png" /></p>
 <hr />
 <h3 id="cn_modem"><strong>CN_MODEM</strong></h3>
 <p>Modem connection. This interface can also be used for other devices or modules, depending on your application.</p>
@@ -1204,8 +1206,8 @@ If keyboard management is disabled, they can be used as general-purpose inputs.<
 </tr>
 </tbody>
 </table>
-<p><strong>Schematic diagram</strong>  <br />
-<img alt="CN_MODEM" src="../img/cn_modem.png" /><br />
+<p><strong>Schematic diagram</strong></p>
+<p><img alt="CN_MODEM" src="../img/cn_modem.png" /><br />
 <img alt="MOS" src="../img/mos.png" /></p>
 <hr />
 <h2 id="add-on-modules"><u><strong>Add-on modules</strong></u></h2>
@@ -1220,9 +1222,9 @@ It is a development board manufactured by Espressif, the ESP32 chip producer. Co
 Note: If using a model with an external antenna connector, even if it has a visible PCB antenna, it may not be internally connected—so in that case, <strong>you MUST use the external antenna</strong> for proper WiFi operation.</p>
 <p><strong>Software control</strong><br />
 The ESP32 board can be programmed with several IDEs/languages, such as Espressif IDF (C/C++), Arduino (C/C++), and MicroPython.<br />
-The board is preloaded with the Sushi Framework, which handles core tasks and integrates MicroPython for custom development. For more details, see the Sushi Framework documentation.</p>
-<p><strong>Schematic diagram</strong><br />
-<img alt="MICRO-SCHEMATICS" src="../img/socket_micro.png" /></p>
+The board is preloaded with the <a href="https://github.com/sushi-iot/sushi-iot-framework">Sushi-IoT-Framework</a>, which handles core tasks and integrates MicroPython for custom development. For more details, see the <a href="https://sushi-iot.github.io/sushi-iot-framework">Sushi-IoT-Framework DOC</a>.</p>
+<p><strong>Schematic diagram</strong></p>
+<p><img alt="MICRO-SCHEMATICS" src="../img/socket_micro.png" /></p>
 <hr />
 <h3 id="io-expander"><strong>IO-Expander</strong></h3>
 <p><strong>Model:</strong> PCF8575 IO-Expander module</p>
@@ -1230,9 +1232,9 @@ The board is preloaded with the Sushi Framework, which handles core tasks and in
 This module allows you to add an extra 16 GPIOs to the Sushi Board. It communicates via the I2C interface.</p>
 <p><strong>Software control</strong>
 The PCF8575 IO-Expander is connected to the I2C data line on ESP32 pins IO22 and IO21.
-If using the Sushi Framework, the driver is integrated, and the IO-Expander can be managed by the MicroPython high-level API (see Sushi Framework DOC).</p>
-<p><strong>Schematic diagram</strong>
-<img alt="IO-EXPANDER" src="../img/socket_ioexpander.png" /></p>
+If using the <a href="https://github.com/sushi-iot/sushi-iot-framework">Sushi-IoT-Framework</a>, the driver is integrated, and the IO-Expander can be managed by the MicroPython high-level API (see <a href="https://sushi-iot.github.io/sushi-iot-framework">Sushi-IoT-Framework DOC</a>).</p>
+<p><strong>Schematic diagram</strong></p>
+<p><img alt="IO-EXPANDER" src="../img/socket_ioexpander.png" /></p>
 <hr />
 <h3 id="screen"><strong>Screen</strong></h3>
 <p><strong>Model:</strong> SSD1306</p>
@@ -1240,9 +1242,9 @@ If using the Sushi Framework, the driver is integrated, and the IO-Expander can 
 0.96" 128x64 pixel I2C OLED module. It can be plugged directly onto the main Sushi PCB (bottom) or fixed on the top PCB support with the provided cable.</p>
 <p><strong>Software control</strong>
 The SSD1306 OLED is connected to the I2C data line on ESP32 pins IO22 and IO21.
-If using the Sushi Framework, the driver is integrated, and the SSD1306 OLED can be managed by the MicroPython high-level API (see Sushi Framework DOC).</p>
-<p><strong>Schematic diagram</strong>
-<img alt="OLED" src="../img/socket_oled.png" /></p>
+If using the <a href="https://github.com/sushi-iot/sushi-iot-framework">Sushi-IoT-Framework</a>, the driver is integrated, and the SSD1306 OLED can be managed by the MicroPython high-level API (see <a href="https://sushi-iot.github.io/sushi-iot-framework">Sushi-IoT-Framework DOC</a>).</p>
+<p><strong>Schematic diagram</strong></p>
+<p><img alt="OLED" src="../img/socket_oled.png" /></p>
 <hr />
 <h3 id="keyboard"><strong>Keyboard</strong></h3>
 <p><strong>Model:</strong> 4-button membrane keyboard</p>
@@ -1250,14 +1252,14 @@ If using the Sushi Framework, the driver is integrated, and the SSD1306 OLED can
 It is connected to the Sushi Board via the I2C IO-Expander module.</p>
 <p><strong>Software control</strong>
 The keypad is connected to the IO-Expander input on P0..P3.
-If using the Sushi Framework, keypad management is integrated and used to navigate the user menu. With the MicroPython high-level API, you can integrate your application-specific menu (see Sushi Framework DOC).</p>
-<p><strong>Schematic diagram</strong>
-Note that the 4-button keyboard has a 5-pin flat cable:</p>
+If using the <a href="https://github.com/sushi-iot/sushi-iot-framework">Sushi-IoT-Framework</a>, keypad management is integrated and used to navigate the user menu. With the MicroPython high-level API, you can integrate your application-specific menu (see <a href="https://sushi-iot.github.io/sushi-iot-framework">Sushi-IoT-Framework DOC</a>).</p>
+<p><strong>Schematic diagram</strong></p>
+<p>Note that the 4-button keyboard has a 5-pin flat cable:</p>
 <ul>
 <li>one is a common pin</li>
 <li>4 pins corresponding to each button that connect to the common pin when a button is pressed</li>
 </ul>
-<p>The keyboard connector has 6 pins with GND on both pins 1 and 6. This allows you to plug the keyboard on either side, without twisting the flat cable, by plugging the connector aligned to the left or right.</p>
+<p>The keyboard connector has 6 pins with GND on both pins 1 and 6. This allows you to plug the keyboard on either side, without twisting the flat cable, by plugging the connector aligned to the left (if keyboard on the desk) or right (if keyboard on TOP PCB).</p>
 <p><img alt="KEYBOARD" src="../img/socket_keyboard.png" /></p>
 <hr />
 <h3 id="relays"><strong>Relays</strong></h3>
@@ -1268,8 +1270,8 @@ Normally closed contact 3A (250VAC/30VDC), MAX: 750VA/90W.
 Relay output can be used to enable external devices, even with AC power. Module details: <a href="https://www.wemos.cc/en/latest/d1_mini_shield/relay.html">Wemos D1 Mini</a>.</p>
 <p><strong>Software control</strong>
 Relays are connected directly to ESP32 pins IO12 and IO15. They can be managed by setting the pin as an output with an ON/OFF signal.</p>
-<p><strong>Schematic diagram</strong>
-<img alt="RELAYS" src="../img/socket_relays.png" /></p>
+<p><strong>Schematic diagram</strong></p>
+<p><img alt="RELAYS" src="../img/socket_relays.png" /></p>
 <hr />
 <h3 id="buzzer"><strong>Buzzer</strong></h3>
 <p><strong>Model:</strong> 3V Active Buzzer</p>
@@ -1277,26 +1279,31 @@ Relays are connected directly to ESP32 pins IO12 and IO15. They can be managed b
 It can be directly controlled by a MicroPython GPIO pin. It can produce different sounds depending on the frequency and duty cycle of the signal used to control it. It is a general-purpose component and can be freely used depending on the application.</p>
 <p><strong>Software control</strong>
 Connected directly to ESP32 pin IO25. It can be managed by setting the pin as an output with a PWM wave to modulate the frequency or simply with an ON/OFF signal.</p>
-<p><strong>Schematic diagram</strong>
-<img alt="BUZZER" src="../img/socket_buzzer.png" /></p>
+<p><strong>Schematic diagram</strong></p>
+<p><img alt="BUZZER" src="../img/socket_buzzer.png" /></p>
 <hr />
 <h3 id="modem"><strong>Modem</strong></h3>
 <p><strong>Model:</strong> SIMcom SIM7672X (NA,E,G) modem module.</p>
 <p><strong>Description</strong>
-The modem is optional and is the only module fixed to the top support PCB, not on the main bottom PCB. This choice was made because there is no standard solution that can cover all possible needs. The SIMcom SIM7672X is a modem module with worldwide band support (NA=North America, E=Europe, G=Global) and certifications. Any SIM7672X can be compatible: <a href="https://en.simcom.com/product/SIM7672.html">SIM7672X</a>. Even any module with a UART interface can be interfaced with the Sushi Board (but may not be compatible with the Sushi Framework if you're using it).</p>
+The modem is optional and is the only module fixed to the top support PCB, not on the main bottom PCB. This choice was made because there is no standard solution that can cover all possible needs. The SIMcom SIM7672X is a modem module with worldwide band support (NA=North America, E=Europe, G=Global) and certifications. Any SIM7672X can be compatible: <a href="https://en.simcom.com/product/SIM7672.html">SIM7672X</a>. Even any module with a UART interface can be interfaced with the Sushi Board (but may not be compatible with the <a href="https://github.com/sushi-iot/sushi-iot-framework">Sushi-IoT-Framework</a> if you're using it).</p>
 <p><strong>Software control</strong>
 The modem module is connected and controlled by the microcontroller through the connector <a href="#cn_modem">CN_MODEM</a>.
-If using the Sushi Framework, modem management for SIM7672X is integrated. With the MicroPython high-level API, you can perform common operations with the modem (see Sushi Framework DOC).</p>
+If using the <a href="https://github.com/sushi-iot/sushi-iot-framework">Sushi-IoT-Framework</a>, modem management for SIM7672X is integrated. With the MicroPython high-level API, you can perform common operations with the modem (see <a href="https://sushi-iot.github.io/sushi-iot-framework">Sushi-IoT-Framework DOC</a>).</p>
+<p><strong>Schematic diagram</strong></p>
+<p>See <a href="#cn_modem">CN_MODEM</a> diagram.<br />
+To connect the modem use the provided cable.<br />
+⚠️<strong>Important</strong>: to avoid damages be careful to plug the connector in the right side, with cable pin 1 (white dot on the connector) with the <em>CN_MODEM</em> pin 1 (PK pin).</p>
 <hr />
 <h3 id="ups-battery"><strong>UPS Battery</strong></h3>
 <p><strong>Model:</strong> LX-2BUPS DC-DC, USB-C, 15W 3A, 5V version</p>
 <p><strong>Description</strong>
-UPS unit, holds 2x18650 lithium batteries.
-<strong>Important</strong>: For the LX-2BUPS module, the 18650 batteries must be the flat-top version.</p>
+UPS unit, holds 2x18650 lithium batteries.<br />
+⚠️<strong>Important</strong>: For the LX-2BUPS module, the 18650 batteries must be the flat-top version.</p>
 <p><strong>Software control</strong>
-The UPS module is connected to the Sushi Board via the <a href="#cn_batt">CN_BATT</a> connector. One ADC is connected to the main power supply IN to detect main power loss, while the second ADC is used to measure the battery level. ADC readings can be performed directly by managing the ADC pins or, if using the Sushi Framework, with the MicroPython high-level API (see Sushi Framework DOC).</p>
-<p><strong>Schematic diagram</strong>
-<img alt="LX-2BUPS_wiring" src="../img/LX-2BUPS_wiring.png" /></p>
+The UPS module is connected to the Sushi Board via the <a href="#cn_batt">CN_BATT</a> connector. One ADC is connected to the main power supply IN to detect main power loss, while the second ADC is used to measure the battery level. ADC readings can be performed directly by managing the ADC pins or, if using the <a href="https://github.com/sushi-iot/sushi-iot-framework">Sushi-IoT-Framework</a>, with the MicroPython high-level API (see <a href="https://sushi-iot.github.io/sushi-iot-framework">Sushi-IoT-Framework DOC</a>).</p>
+<p><strong>Schematic diagram</strong></p>
+<p><img alt="LX-2BUPS_wiring" src="../img/LX-2BUPS_wiring.png" />
+<strong>Advice</strong>: To reach <em>CN_BATT</em>, the RED and BLACK wires are about 7 cm long, while the YELLOW and ORANGE wires are about 16 cm long.</p>
 <hr />
 <h2 id="board-components"><u><strong>Board components</strong></u></h2>
 <p><img alt="PCB-GP-ELEMENTS" src="../img/bot-pcb-components.png" /></p>
